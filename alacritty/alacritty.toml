@@ -1,0 +1,10 @@
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[font]
+normal = { family = "JetbrainsMono Nerd Font", style = "Bold" }
+
+[cursor]
+style = { shape = "Beam" }
+

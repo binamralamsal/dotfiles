@@ -1,0 +1,79 @@
+* {
+  font-family: "JetbrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+}
+
+window#waybar{
+  background: none;
+  color: white;
+}
+
+#custom-launch_wofi,
+#custom-power_btn,
+#custom-lock_screen,
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#taskbar,
+#tray {
+  background: black;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5em;
+  opacity: 0.75;
+  margin-top: 1em;
+}
+
+#taskbar{
+  padding: 0;
+}
+
+#taskbar button{
+  padding: 0 0.5em;
+  border: 0;
+  transition: .2s ease;
+}
+
+#taskbar button:hover{
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+#taskbar button.active{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#custom-launch_wofi {
+  margin-left: 1em;
+  padding-right: 1.15em;
+  margin-right: 0.5em;
+}
+
+#custom-power_btn{
+  margin-right: 1em;
+  padding-right: 1.15em;
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+#custom-lock_screen {
+  border-radius: 0.5em 0 0 0.5em;
+  margin-left: 0.5em;
+}
+
+#tray {
+  margin-right: 0.5em;
+  padding-right: 0.9em;
+}
+
+#battery {
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+#pulseaudio, #backlight {
+  border-radius: 0;
+}
+
+#pulseaudio.microphone {
+  border-radius: 0 0.5em 0.5em 0;
+}
