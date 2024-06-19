@@ -54,3 +54,27 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # bun completions
 [ -s "/home/binamra/.bun/_bun" ] && source "/home/binamra/.bun/_bun"
+
+eval "$(atuin init zsh)"
+
+# if [ -z "$TMUX" ]
+# then
+#    tmux attach -t Main || tmux new -s Main
+# fi
+#
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/binamra/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/binamra/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/binamra/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/binamra/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+

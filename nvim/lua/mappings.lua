@@ -8,8 +8,8 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- moving between buffers
-map("n", "<s-h>", "<cmd> bnext <cr>")
-map("n", "<s-l>", "<cmd> bprevious <cr>")
+map("n", "<s-l>", "<cmd> bnext <cr>")
+map("n", "<s-h>", "<cmd> bprevious <cr>")
 
 -- navigate within insert mode
 map("i", "<c-h>", "<left>")

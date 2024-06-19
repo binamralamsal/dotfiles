@@ -5,10 +5,19 @@
 local M = {}
 
 M.ui = {
-  theme = "catppuccin",
+  theme = "ayu_dark",
+  -- transparency = true,
+
+  statusline = {
+    theme = "vscode",
+  },
+
+  nvdash = {
+    load_on_startup = true,
+  },
 
   -- hl_override = {
-  -- 	Comment = { italic = true },
+  -- Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
   -- },
 }

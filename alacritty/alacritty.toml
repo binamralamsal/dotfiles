@@ -8,3 +8,6 @@ normal = { family = "JetbrainsMono Nerd Font", style = "Bold" }
 [cursor]
 style = { shape = "Beam" }
 
+[window]
+opacity = 0.8
+blur = true

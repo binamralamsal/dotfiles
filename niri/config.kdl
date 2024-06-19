@@ -241,6 +241,10 @@ window-rule {
     match title="Firefox"
     match app-id="telegram"
     match app-id="code"
+    match app-id="google-chrome-beta"
+    match app-id="Nautilus"
+    match app-id="Alacritty"
+
     open-maximized true
 }
 
@@ -274,7 +278,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return      { spawn "alacritty"; }
     Mod+E           { spawn "nautilus"; }
-    Mod+D           { spawn "wofi"; }
+    Mod+D           { spawn "anyrun"; }
     Mod+Alt+L       { spawn "swaylock"; }
     Mod+M           { spawn "wlogout"; }
     Mod+Shift+N     { spawn "zsh" "-c" "swaync-client -t -sw"; }
