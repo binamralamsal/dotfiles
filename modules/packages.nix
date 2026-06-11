@@ -94,6 +94,8 @@
     gnome-themes-extra
     showtime
     loupe
+    file-roller
+    p7zip
   ];
 
   programs.zsh.enable = true;
