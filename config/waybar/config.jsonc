@@ -1,0 +1,122 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mode": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "modules-left": ["custom/launch_wofi", "wlr/taskbar", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "custom/lock_screen",
+    "custom/power_btn",
+  ],
+
+  "custom/launch_wofi": {
+    "format": "",
+    "on-click": "vicinae vicinae://toggle",
+    "tooltip": false,
+  },
+
+"hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-scroll-up": "~/dotfiles/config/scripts/workspace-prev",
+    "on-scroll-down": "~/dotfiles/config/scripts/workspace-next",
+},
+
+  "custom/lock_screen": {
+    "format": "",
+    "on-click": "swaylock",
+    "tooltip": false,
+  },
+
+  "custom/power_btn": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false,
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10,
+  },
+
+  "wlr/taskbar": {
+    // "all-outputs": true,
+    "format": "{icon}",
+    "tooltip-format": "{title} | {app_id}",
+    "on-click": "minimize-raise",
+    "on-click-middle": "close",
+    "on-click-right": "fullscreen",
+    "height": "10",
+    "icon-size": 14,
+    "spacing": 10,
+    "on-scroll-up": "~/dotfiles/config/scripts/workspace-prev",
+    "on-scroll-down": "~/dotfiles/config/scripts/workspace-next",
+  },
+
+  "clock": {
+    "format": "{:%A, %B %d, %Y (%I:%M %p)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "on-scroll-up": "~/dotfiles/config/scripts/workspace-prev",
+    "on-scroll-down": "~/dotfiles/config/scripts/workspace-next",
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "~/dotfiles/config/scripts/brightness --inc",
+    "on-scroll-down": "~/dotfiles/config/scripts/brightness --dec",
+    "min-length": 6,
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "~/dotfiles/config/scripts/volume --toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/dotfiles/config/scripts/volume --inc",
+    "on-scroll-down": "~/dotfiles/config/scripts/volume --dec",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "~/dotfiles/config/scripts/volume --toggle-mic",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/dotfiles/config/scripts/volume --mic-inc",
+    "on-scroll-down": "~/dotfiles/config/scripts/volume --mic-dec",
+    "scroll-step": 5,
+  },
+}

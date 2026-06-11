@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+current=$(hyprctl activeworkspace -j | jq '.id')
+windows=$(hyprctl activeworkspace -j | jq '.windows')
+max=$(hyprctl workspaces -j | jq '[.[] | select(.id > 0) | .id] | max')
+
+next=$((current + 1))
+
+if [ "$windows" -gt 0 ] || [ "$current" -lt "$max" ]; then
+    hyprctl dispatch "hl.dsp.focus({ workspace = $next })"
+fi

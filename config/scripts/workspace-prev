@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+current=$(hyprctl activeworkspace -j | jq '.id')
+prev=$((current - 1))
+
+if [ "$current" -gt 1 ]; then
+    hyprctl dispatch "hl.dsp.focus({ workspace = $prev })"
+fi

@@ -1,0 +1,37 @@
+#!/usr/bin/env zsh
+
+# Config
+STEP=5 # brightness step %
+
+# Get brightness percentage
+get_backlight() {
+    brightnessctl -m | awk -F, '{print $4}'
+}
+
+# Increase brightness
+inc_backlight() {
+    brightnessctl -e4 -n2 set "${STEP}%+" \
+        && swayosd-client --brightness raise
+}
+
+# Decrease brightness
+dec_backlight() {
+    brightnessctl -e4 -n2 set "${STEP}%-" \
+        && swayosd-client --brightness lower
+}
+
+# Execute accordingly
+case "$1" in
+    --get)
+        get_backlight
+        ;;
+    --inc)
+        inc_backlight
+        ;;
+    --dec)
+        dec_backlight
+        ;;
+    *)
+        get_backlight
+        ;;
+esac

@@ -1,0 +1,82 @@
+#!/usr/bin/env zsh
+
+# Config
+STEP=2           # volume step %
+MAX_VOLUME=1.5   # 150% max boost
+
+# Get output volume
+get_volume() {
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'
+}
+
+# Get mic volume
+get_mic_volume() {
+    wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print int($2 * 100)}'
+}
+
+# Increase Volume
+inc_volume() {
+    wpctl set-volume -l "$MAX_VOLUME" @DEFAULT_AUDIO_SINK@ "${STEP}%+" \
+        && swayosd-client --output-volume raise --max-volume 150
+}
+
+# Decrease Volume
+dec_volume() {
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ "${STEP}%-" \
+        && swayosd-client --output-volume lower --max-volume 150
+}
+
+# Toggle Output Mute
+toggle_mute() {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle \
+        && swayosd-client --output-volume mute-toggle --max-volume 150
+}
+
+# Toggle Mic Mute
+toggle_mic() {
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle \
+        && swayosd-client --input-volume mute-toggle
+}
+
+# Increase Mic Volume
+inc_mic_volume() {
+    wpctl set-volume -l "$MAX_VOLUME" @DEFAULT_AUDIO_SOURCE@ "${STEP}%+" \
+        && swayosd-client --input-volume raise
+}
+
+# Decrease Mic Volume
+dec_mic_volume() {
+    wpctl set-volume @DEFAULT_AUDIO_SOURCE@ "${STEP}%-" \
+        && swayosd-client --input-volume lower
+}
+
+# Execute accordingly
+case "$1" in
+    --get)
+        get_volume
+        ;;
+    --get-mic)
+        get_mic_volume
+        ;;
+    --inc)
+        inc_volume
+        ;;
+    --dec)
+        dec_volume
+        ;;
+    --toggle)
+        toggle_mute
+        ;;
+    --toggle-mic)
+        toggle_mic
+        ;;
+    --mic-inc)
+        inc_mic_volume
+        ;;
+    --mic-dec)
+        dec_mic_volume
+        ;;
+    *)
+        get_volume
+        ;;
+esac
