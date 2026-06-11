@@ -529,8 +529,8 @@ local function window_workspace_prev()
         hl.dispatch(hl.dsp.window.move({ workspace = current.id - 1 }))
     end
 end
-hl.bind(mainMod .. " + SHIFT + U", window_workspace_next)
-hl.bind(mainMod .. " + SHIFT + I", window_workspace_prev)
+hl.bind(mainMod .. " + bracketright", window_workspace_next)
+hl.bind(mainMod .. " + bracketleft", window_workspace_prev)
 
 -- Resize window with arrows - dwindle
 --[[hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 20,  y = 0,  relative = true }))
@@ -740,3 +740,4 @@ hl.window_rule({ name = "helium-crx-float", match = { class = "^chrome-.*-Defaul
 hl.window_rule({ name = "helium-popup-float", match = { class = "helium", initial_title = "^Untitled - Helium$", }, float = true, })
 hl.window_rule({ name = "picture-in-picture-float", match = { title = "^Picture in picture$" }, float = true, pin = true, })
 hl.window_rule({ name = "satty-float", match = { class = "com.gabm.satty" }, float = true })
+hl.window_rule({ name = "obs-screen-picker-float", match = { title = "^Select what to share$", }, float = true, center = true, })
