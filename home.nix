@@ -51,8 +51,15 @@ in
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
-  };
   
+    gtk4 = {
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+      };
+    };
+  };  
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
@@ -64,5 +71,5 @@ in
     platformTheme.name = "gtk3";
   };
   
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 }

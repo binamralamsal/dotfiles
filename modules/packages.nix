@@ -85,7 +85,7 @@
     obs-studio
     anydesk
     appimage-run
-    inputs.helium-flake.packages.${pkgs.system}.helium
+    inputs.helium-flake.packages.${pkgs.stdenv.hostPlatform.system}.helium
     video-trimmer
     proton-vpn
     calibre
