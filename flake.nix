@@ -34,8 +34,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           nur.modules.nixos.default
-	  nix-flatpak.nixosModules.nix-flatpak
-	  {
+          nix-flatpak.nixosModules.nix-flatpak
+          {
             nixpkgs.overlays = [
               helium-flake.overlays.default
             ];

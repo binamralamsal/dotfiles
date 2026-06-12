@@ -34,7 +34,6 @@ in
     source = symlink "${dotfiles}/${subpath}";
   }) configs;
 
-
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
@@ -49,19 +48,19 @@ in
   # gtk
   gtk = {
     enable = true;
-  
+
     theme = {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
-  
+
     gtk4 = {
       theme = {
         name = "Adwaita-dark";
         package = pkgs.gnome-themes-extra;
       };
     };
-  };  
+  };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -73,6 +72,6 @@ in
     enable = true;
     platformTheme.name = "gtk3";
   };
-  
+
   home.stateVersion = "26.05";
 }

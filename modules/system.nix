@@ -4,7 +4,6 @@
   inputs,
   ...
 }:
-
 {
   # boot
   boot.loader.grub = {

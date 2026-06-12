@@ -86,33 +86,33 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 1px 0.25em;
-    color: #313244;
+  padding: 1px 0.25em;
+  color: #313244;
 }
 
 #workspaces button:not(:last-child) {
-    margin-right: 0.2em;
+  margin-right: 0.2em;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
-    background: #11111b;
+  color: #a6adc8;
+  background: #11111b;
 }
 
 #workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 10px;
+  color: #a6adc8;
+  background: #eba0ac;
+  border-radius: 10px;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
+  color: #11111b;
+  background: #a6e3a1;
+  border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 10px;
+  background: #11111b;
+  color: #cdd6f4;
+  border-radius: 10px;
 }

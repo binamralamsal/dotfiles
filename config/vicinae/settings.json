@@ -9,15 +9,15 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
-   "$schema": "https://vicinae.com/schemas/config.json",
-   "close_on_focus_loss": true,
-   "font": {
-      "rendering": "native",
-      "normal": {}
-   },
-   "theme": {
-      "dark": {
-         "name": "libadwaita-dark"
-      }
-   }
+  "$schema": "https://vicinae.com/schemas/config.json",
+  "close_on_focus_loss": true,
+  "font": {
+    "rendering": "native",
+    "normal": {}
+  },
+  "theme": {
+    "dark": {
+      "name": "libadwaita-dark"
+    }
+  }
 }

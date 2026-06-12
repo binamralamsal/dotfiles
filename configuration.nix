@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -13,7 +12,7 @@
   time.timeZone = "Asia/Kathmandu";
 
   i18n.defaultLocale = "en_US.UTF-8";
-  
+
   users.users.binamra = {
     isNormalUser = true;
     description = "Binamra Lamsal";
@@ -32,7 +31,10 @@
 
   nix.optimise.automatic = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   home-manager.backupFileExtension = "backup";
