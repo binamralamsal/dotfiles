@@ -69,9 +69,8 @@
     hyprlock
 
     # screenshots / clipboard
-    swappy
     wl-clipboard
-    cliphist
+    # cliphist
     hyprshot
     satty
 
@@ -96,6 +95,7 @@
     loupe
     p7zip
     wireguard-tools
+    cine
   ];
 
   programs.zsh.enable = true;
