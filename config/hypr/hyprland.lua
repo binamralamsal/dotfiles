@@ -331,7 +331,8 @@ hl.config({
         column_width = 0.65,
 
         follow_focus = true,
-        focus_fit_method = 1,
+        focus_fit_method = 0,
+	follow_min_visible = 0,
 
         wrap_focus = true,
         wrap_swapcol = true,
@@ -741,3 +742,5 @@ hl.window_rule({ name = "helium-popup-float", match = { class = "helium", initia
 hl.window_rule({ name = "picture-in-picture-float", match = { title = "^Picture in picture$" }, float = true, pin = true, })
 hl.window_rule({ name = "satty-float", match = { class = "com.gabm.satty" }, float = true })
 hl.window_rule({ name = "obs-screen-picker-float", match = { title = "^Select what to share$", }, float = true, center = true, })
+hl.window_rule({ name = "firefox-activate", match = { class = "firefox" }, focus_on_activate = true, })
+hl.window_rule({ name = "helium-activate", match = { class = "helium" }, focus_on_activate = true, })
