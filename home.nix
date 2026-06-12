@@ -26,7 +26,6 @@ in
     ./config/zsh.nix
     ./config/git.nix
     ./config/ghostty.nix
-    ./config/swaylock.nix
     ./config/tmux.nix
     ./config/xdg.nix
   ];

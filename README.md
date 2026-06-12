@@ -24,7 +24,7 @@ This repository contains my personal desktop and development environment with a 
 | Bar | Waybar |
 | Notification Center | SwayNC |
 | OSD | SwayOSD |
-| Lock Screen | Swaylock Effects |
+| Lock Screen | Hyprlock |
 | Wallpaper Manager | Hyprpaper |
 | Browser | Firefox + Helium |
 | File Manager | Nautilus |
@@ -66,7 +66,6 @@ This repository contains my personal desktop and development environment with a 
 │   ├── firefox.nix
 │   ├── ghostty.nix
 │   ├── git.nix
-│   ├── swaylock.nix
 │   └── zsh.nix
 ├── modules/
 │   ├── system.nix             # Core system configuration

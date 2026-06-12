@@ -67,6 +67,7 @@
     hyprcursor
     hyprpicker
     hypridle
+    hyprlock
 
     # screenshots / clipboard
     swappy
