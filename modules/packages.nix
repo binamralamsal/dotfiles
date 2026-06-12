@@ -70,7 +70,6 @@
 
     # screenshots / clipboard
     wl-clipboard
-    # cliphist
     hyprshot
     satty
 
@@ -91,11 +90,12 @@
     gnome-epub-thumbnailer
     nautilus
     gnome-themes-extra
-    showtime
     loupe
     p7zip
     wireguard-tools
     cine
+    resources
+    paper-clip
   ];
 
   programs.zsh.enable = true;
