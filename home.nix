@@ -5,6 +5,7 @@ let
   configs = {
     hypr = "hypr";
     waybar = "waybar";
+    vicinae = "vicinae";
   };
 in
 {
