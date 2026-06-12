@@ -14,12 +14,12 @@ in
     LD_LIBRARY_PATH = "/run/current-system/sw/share/nix-ld/lib";
     QT_QPA_PLATFORMTHEME = "gtk3";
     QT_QPA_PLATFORM = "wayland";
-    # ALSA_PLUGIN_DIR = "${pkgs.pipewire}/lib/alsa-lib";
+    ALSA_PLUGIN_DIR = "${pkgs.pipewire}/lib/alsa-lib";
   };
 
-  # systemd.user.sessionVariables = {
-  # ALSA_PLUGIN_DIR = "${pkgs.pipewire}/lib/alsa-lib";
-  # };
+  systemd.user.sessionVariables = {
+    ALSA_PLUGIN_DIR = "${pkgs.pipewire}/lib/alsa-lib";
+  };
 
   imports = [
     ./config/zsh.nix
