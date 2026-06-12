@@ -43,6 +43,8 @@ in
     size = 24;
   };
 
+  services.ssh-agent.enable = true;
+
   # gtk
   gtk = {
     enable = true;
