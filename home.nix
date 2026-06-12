@@ -28,6 +28,7 @@ in
     ./config/ghostty.nix
     ./config/swaylock.nix
     ./config/tmux.nix
+    ./config/xdg.nix
   ];
 
   xdg.configFile = builtins.mapAttrs (_: subpath: {
