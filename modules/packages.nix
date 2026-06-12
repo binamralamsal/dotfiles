@@ -95,6 +95,7 @@
     showtime
     loupe
     p7zip
+    wireguard-tools
   ];
 
   programs.zsh.enable = true;
