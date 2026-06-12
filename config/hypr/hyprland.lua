@@ -718,7 +718,8 @@ hl.window_rule({
     name = "obs-screen-picker-float",
     match = {title = "^Select what to share$"},
     float = true,
-    center = true
+    center = true,
+    size = "400 300"
 })
 hl.window_rule({
     name = "firefox-activate",
@@ -729,4 +730,13 @@ hl.window_rule({
     name = "helium-activate",
     match = {class = "helium"},
     focus_on_activate = true
+})
+hl.window_rule({
+    name = "blueman-float",
+    match = {
+        title = "^Bluetooth Devices$"
+    },
+    float = true,
+    center = true,
+    size = "600 500"
 })
