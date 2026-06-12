@@ -28,8 +28,9 @@ dec_volume() {
 
 # Toggle Output Mute
 toggle_mute() {
-    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle \
-        && swayosd-client --output-volume mute-toggle --max-volume 150
+    # wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle \
+    #    && swayosd-client --output-volume mute-toggle --max-volume 150
+    swayosd-client --output-volume mute-toggle --max-volume 150
 }
 
 # Toggle Mic Mute
