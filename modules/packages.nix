@@ -112,6 +112,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    libre-baskerville
   ];
 
   services.redis.servers.default = {
