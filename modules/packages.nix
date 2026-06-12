@@ -95,7 +95,7 @@
     wireguard-tools
     cine
     resources
-    paper-clip
+    papers
   ];
 
   programs.zsh.enable = true;
