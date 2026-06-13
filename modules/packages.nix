@@ -98,8 +98,6 @@
     papers
     gnome-frog
     gnome-text-editor
-    gnome-chess
-    mission-center
     switcheroo
   ];
 

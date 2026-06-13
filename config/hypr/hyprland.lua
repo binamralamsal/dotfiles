@@ -549,17 +549,17 @@ local screenshots_dir = os.getenv("HOME") .. "/Pictures/Screenshots"
 -- Print → fullscreen of active monitor, saved to disk + clipboard
 hl.bind("Print", hl.dsp
             .exec_cmd(
-            "hyprshot -m output -m active -o " .. screenshots_dir .. " -z"))
+            "hyprshot -z -m output -m active -o " .. screenshots_dir))
 
 -- SUPER + Print → active window, saved to disk + clipboard
 hl.bind(mainMod .. " + Print", hl.dsp
             .exec_cmd(
-            "hyprshot -m window -m active -o " .. screenshots_dir .. " -z"))
+            "hyprshot -z -m window -m active -o " .. screenshots_dir))
 
 -- SUPER + S → region screenshot, auto save to disk + clipboard
 hl.bind(mainMod .. " + S",
         hl.dsp.exec_cmd("sh -c 'mkdir -p " .. screenshots_dir ..
-                            " && hyprshot -m region -o " .. screenshots_dir ..
+                            " && hyprshot -z -m region -o " .. screenshots_dir ..
                             " && wl-copy < \"$(ls -t " .. screenshots_dir ..
                             "/*.png | head -n1)\"'"))
 
