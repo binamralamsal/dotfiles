@@ -99,6 +99,7 @@
     gnome-frog
     gnome-text-editor
     switcheroo
+    vlc
   ];
 
   programs.zsh.enable = true;
