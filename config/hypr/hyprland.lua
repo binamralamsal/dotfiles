@@ -559,7 +559,7 @@ hl.bind(mainMod .. " + Print", hl.dsp
 -- SUPER + S → region screenshot, auto save to disk + clipboard
 hl.bind(mainMod .. " + S",
         hl.dsp.exec_cmd("sh -c 'mkdir -p " .. screenshots_dir ..
-                            " && hyprshot -z -m region -o " .. screenshots_dir ..
+                            " && hyprshot -m region -z -o " .. screenshots_dir ..
                             " && wl-copy < \"$(ls -t " .. screenshots_dir ..
                             "/*.png | head -n1)\"'"))
 

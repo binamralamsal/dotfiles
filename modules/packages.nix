@@ -72,6 +72,7 @@
     wl-clipboard
     hyprshot
     satty
+    cliphist
 
     # =========================
     # GUI Applications
