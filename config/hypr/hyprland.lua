@@ -348,6 +348,9 @@ hl.bind(mainMod .. " + N", hl.dsp
 hl.bind(mainMod .. " + semicolon", hl.dsp
             .exec_cmd(
             "vicinae 'vicinae://launch/core/search-emojis?toggle=true'"))
+hl.bind(mainMod .. " + J", hl.dsp
+            .exec_cmd(
+            "vicinae 'vicinae://launch/wm/switch-windows?toggle=true'"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("togglesplit"))    -- dwindle only
@@ -543,35 +546,17 @@ hl.bind(mainMod .. " + Tab", hl.dsp.layout("fit active"))
 -- promote window into its own column
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.layout("promote"))
 
--- Screenshots (hyprshot + satty)
-local screenshots_dir = os.getenv("HOME") .. "/Pictures/Screenshots"
+hl.bind("Print",
+    hl.dsp.exec_cmd("~/dotfiles/config/scripts/screenshot output"))
 
--- Print → fullscreen of active monitor, saved to disk + clipboard
-hl.bind("Print", hl.dsp
-            .exec_cmd(
-            "hyprshot -z -m output -m active -o " .. screenshots_dir))
+hl.bind(mainMod .. " + Print",
+    hl.dsp.exec_cmd("~/dotfiles/config/scripts/screenshot window"))
 
--- SUPER + Print → active window, saved to disk + clipboard
-hl.bind(mainMod .. " + Print", hl.dsp
-            .exec_cmd(
-            "hyprshot -z -m window -m active -o " .. screenshots_dir))
-
--- SUPER + S → region screenshot, auto save to disk + clipboard
 hl.bind(mainMod .. " + S",
-        hl.dsp.exec_cmd("sh -c 'mkdir -p " .. screenshots_dir ..
-                            " && hyprshot -m region -z -o " .. screenshots_dir ..
-                            " && wl-copy < \"$(ls -t " .. screenshots_dir ..
-                            "/*.png | head -n1)\"'"))
+    hl.dsp.exec_cmd("~/dotfiles/config/scripts/screenshot region"))
 
--- SUPER + SHIFT + S → region select, pipe raw output into satty for annotation
--- satty saves the annotated result to disk and copies to clipboard
 hl.bind(mainMod .. " + SHIFT + S",
-        hl.dsp.exec_cmd("sh -c 'mkdir -p " .. screenshots_dir ..
-                            " && hyprshot -m region -z --raw | satty --filename -" ..
-                            " --copy-command wl-copy --save-after-copy" ..
-                            " --actions-on-enter save-to-clipboard,exit" ..
-                            " --output-filename \"" .. screenshots_dir ..
-                            "/%Y-%m-%d_%H-%M-%S.png\"'"))
+    hl.dsp.exec_cmd("~/dotfiles/config/scripts/screenshot annotate"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 local scripts = os.getenv("HOME") .. "/dotfiles/config/scripts"

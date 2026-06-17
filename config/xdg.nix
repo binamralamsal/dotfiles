@@ -17,4 +17,17 @@
       XDG_PROJECTS_DIR = "${config.home.homeDirectory}/Projects";
     };
   };
+
+  xdg.mimeApps = {
+    enable = true;
+
+    defaultApplications = {
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+
+      "image/png" = [ "org.gnome.Loupe.desktop" ];
+      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+      "image/gif" = [ "org.gnome.Loupe.desktop" ];
+      "image/webp" = [ "org.gnome.Loupe.desktop" ];
+    };
+  };
 }

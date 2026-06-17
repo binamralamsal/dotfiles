@@ -1,0 +1,73 @@
+#!/usr/bin/env zsh
+
+setopt ERR_EXIT
+
+SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$SCREENSHOTS_DIR"
+
+MODE="$1"
+FILE="$SCREENSHOTS_DIR/$(date +%Y-%m-%d_%H-%M-%S).png"
+
+notify_screenshot() {
+    local file="$1"
+    local title="${2:-Screenshot saved}"
+    local body="${3:-Copied to clipboard and saved}"
+
+    ACTION=$(notify-send \
+        -i "$file" \
+        -A open="Open" \
+        -A folder="Show in Folder" \
+        "$title" \
+        "$body")
+
+    case "$ACTION" in
+        open)
+            xdg-open "$file" >/dev/null 2>&1 &
+            ;;
+        folder)
+            nautilus --select "$file" >/dev/null 2>&1 &
+            ;;
+    esac
+}
+
+case "$MODE" in
+    region)
+        if hyprshot -z -m region --raw | tee "$FILE" | wl-copy >/dev/null; then
+            notify_screenshot "$FILE"
+        fi
+        ;;
+
+    window)
+        if hyprshot -z -m window -m active --raw | tee "$FILE" | wl-copy >/dev/null; then
+            notify_screenshot "$FILE"
+        fi
+        ;;
+
+    output)
+        if hyprshot -z -m output -m active --raw | tee "$FILE" | wl-copy >/dev/null; then
+            notify_screenshot "$FILE"
+        fi
+        ;;
+
+    annotate)
+        hyprshot -z -m region --raw | satty \
+            --disable-notifications \
+            --filename - \
+            --copy-command wl-copy \
+            --save-after-copy \
+            --actions-on-enter save-to-clipboard,exit \
+            --output-filename "$FILE"
+
+        if [ -s "$FILE" ]; then
+            notify_screenshot \
+                "$FILE" \
+                "Screenshot annotated" \
+                "Copied to clipboard and saved"
+        fi
+        ;;
+
+    *)
+        echo "Usage: screenshot {region|window|output|annotate}"
+        exit 1
+        ;;
+esac

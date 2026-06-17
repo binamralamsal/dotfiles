@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+setopt ERR_EXIT
+
+FILE="$1"
+TITLE="${2:-Screenshot saved}"
+BODY="${3:-Copied to clipboard and saved}"
+
+ACTION=$(notify-send \
+    -i "$FILE" \
+    -A open="Open" \
+    -A folder="Folder" \
+    "$TITLE" \
+    "$BODY")
+
+case "$ACTION" in
+    open)
+        xdg-open "$FILE" >/dev/null 2>&1 &
+        ;;
+    folder)
+        nautilus --select "$FILE" >/dev/null 2>&1 &
+        ;;
+esac
