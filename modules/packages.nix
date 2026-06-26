@@ -79,6 +79,7 @@
     # =========================
     vscode
     telegram-desktop
+    signal-desktop
     qbittorrent
     foliate
     obs-studio

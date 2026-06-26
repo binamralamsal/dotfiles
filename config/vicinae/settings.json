@@ -20,6 +20,11 @@
          "name": "libadwaita-dark"
       }
    },
+   "favorites": [
+      "applications:org.telegram",
+      "applications:helium",
+      "clipboard:history"
+   ],
    "providers": {
       "clipboard": {
          "preferences": {

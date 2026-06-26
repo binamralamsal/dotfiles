@@ -23,11 +23,11 @@
 
     defaultApplications = {
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-
       "image/png" = [ "org.gnome.Loupe.desktop" ];
       "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
       "image/gif" = [ "org.gnome.Loupe.desktop" ];
       "image/webp" = [ "org.gnome.Loupe.desktop" ];
+      "application/epub+zip" = [ "com.github.johnfactotum.Foliate.desktop" ];
     };
   };
 }
