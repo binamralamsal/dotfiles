@@ -21,6 +21,7 @@
     gst_all_1.gst-libav
     xdg-user-dirs
     pavucontrol
+    alsa-utils
 
     # =========================
     # Terminal / CLI tools
