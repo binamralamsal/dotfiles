@@ -79,7 +79,6 @@
     # GUI Applications
     # =========================
     vscode
-    chromium
     codex
     telegram-desktop
     signal-desktop
