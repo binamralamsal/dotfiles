@@ -59,6 +59,9 @@
     variant = "";
   };
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;

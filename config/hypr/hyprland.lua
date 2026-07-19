@@ -662,7 +662,7 @@ hl.window_rule({
     name = "vscode-width",
     match = {class = "code"},
     scrolling_width = 1.0,
-    opacity = "0.9"
+    --opacity = "0.9"
 })
 hl.window_rule({
     name = "telegram-width",

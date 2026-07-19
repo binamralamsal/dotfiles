@@ -32,7 +32,7 @@ notify_screenshot() {
 
 case "$MODE" in
     region)
-        if hyprshot -z -m region --raw | tee "$FILE" | wl-copy >/dev/null; then
+        if hyprshot -m region --raw | tee "$FILE" | wl-copy >/dev/null; then
             notify_screenshot "$FILE"
         fi
         ;;
