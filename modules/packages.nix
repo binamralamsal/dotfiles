@@ -104,6 +104,7 @@
     gnome-text-editor
     switcheroo
     vlc
+    prismlauncher
   ];
 
   programs.zsh.enable = true;
